@@ -1,16 +1,16 @@
 const data = [
   {
     id: 1,
-    name: "Taichung beauty",
+    name: "Wild Daisy",
     rating: 3,
     isSpecial: true,
     isNatural: false,
     image:
-      "https://img4.thuthuatphanmem.vn/uploads/2021/06/04/hinh-nen-hoa-lan-don-sac-dep-nhat_032303886.jpg",
+      "https://i.pinimg.com/736x/72/4e/5c/724e5c7b737e0d8ed284810b6b09f4aa.jpg",
     color: "white",
     numberOfLike: 192,
-    origin: "Taiwan",
-    category: "Cattleya",
+    origin: "England",
+    category: "Asteraceae",
   },
   {
     id: 2,
