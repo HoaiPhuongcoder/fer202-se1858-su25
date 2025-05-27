@@ -62,7 +62,8 @@ function Card({
           <p className="flex items-center">
             <span className="font-semibold">Color:</span>
             <span
-              className={`ml-2 inline-block w-4 h-4 border rounded-full bg-${color}-500`}
+              style={{ background: color, opacity: 0.8 }}
+              className="ml-2 inline-block w-4 h-4 border rounded-full "
             />
             <span className="ml-2">{color}</span>
           </p>
