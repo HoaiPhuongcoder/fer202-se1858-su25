@@ -80,28 +80,20 @@
 // }
 
 // export default App;
+import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import CardCustom from "./Components/CardCustom";
 
 function App() {
+  const [isShow, setIsShow] = useState(false);
+  const handleShow = () => {
+    setIsShow((prev) => !prev);
+  };
   return (
     <div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img
-          variant="top"
-          src="https://i.pinimg.com/736x/65/b8/a9/65b8a9e52b5f0934482494aee68751a8.jpg"
-        />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <Modal show={true}>
+      <CardCustom handleShow={handleShow} />
+      <Modal show={isShow}>
         <Modal.Dialog>
           <Modal.Header closeButton>
             <Modal.Title>Modal title</Modal.Title>
@@ -112,7 +104,9 @@ function App() {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="secondary">Close</Button>
+            <Button onClick={handleShow} variant="secondary">
+              Close
+            </Button>
             <Button variant="primary">Save changes</Button>
           </Modal.Footer>
         </Modal.Dialog>
