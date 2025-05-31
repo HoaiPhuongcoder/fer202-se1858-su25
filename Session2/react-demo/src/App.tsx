@@ -1,116 +1,52 @@
-// import Card from "./Components/Card";
-// import Navbar from "./Components/Navbar";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-// function App() {
-//   const data = [
-//     {
-//       id: "DV1",
-//       name: "Xét Nghiệm Sàng Lọc HIV",
-//       description: "Xét nghiệm siêu uy tín",
-//       image:
-//         "https://media.istockphoto.com/id/2176619368/vi/anh/asia-female-pharmacist-using-digital-tablet-while-taking-inventory.jpg?s=1024x1024&w=is&k=20&c=811jNqxOTtwyaZ_N1rAnHrBa337wXu4jNCXTcP47a-E=",
-//       price: "200000Đ đ",
-//     },
-//     {
-//       id: "DV2",
-//       name: "Xét Nghiệm Khẳng Định  HIV",
-//       description: "Xét nghiệm siêu uy tín",
-//       image:
-//         "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVkaWNhbHxlbnwwfHwwfHx8MA%3D%3D",
-//       price: "160.000 đ",
-//     },
-//     {
-//       id: "DV3",
-//       name: "Điều Trị HIV theo phác đồ ARV",
-//       description: "Cấp chứng chỉ HIV ",
-//       image:
-//         "https://plus.unsplash.com/premium_photo-1673953510197-0950d951c6d9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1lZGljYWx8ZW58MHx8MHx8fDA%3D",
-//       price: "300.000 đ",
-//     },
-//   ];
-//   return (
-//     <div>
-//       <Navbar />
-//       <div className="container mt-8">
-//         <div className="row">
-//           {data &&
-//             data.map((item) => {
-//               return (
-//                 <Card
-//                   key={item.id}
-//                   name={item.name}
-//                   description={item.description}
-//                   image={item.image}
-//                   price={item.price}
-//                 />
-//               );
-//             })}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+type Student = {
+  createdAt: number;
+  name: string;
+  avatar: string;
+  email: string;
+  password: string;
+  id: string;
+};
 
-// export default App;
-
-// function App() {
-//   // để quản lý sự thay đổi của một đối tượng trong react sử dung state();
-//   // Hook: Đây là những hàm sẵn để thực hiện 1 chức năng nào đó
-//   // useState : HOOK để quản lý trạng thái
-
-//   const [money, setMoney] = useState<number>(3.5);
-//   const handleDecrease = () => {
-//     setMoney((prev) => prev - 0.5);
-//   };
-//   const handleIncrease = () => {
-//     setMoney((prev) => prev + 0.5);
-//   };
-
-//   return (
-//     <div className="text-center">
-//       <button className="btn btn-danger" onClick={handleDecrease}>
-//         -
-//       </button>
-//       <div>Số Tiền:{money} </div>
-//       <button className="btn btn-primary" onClick={handleIncrease}>
-//         +
-//       </button>
-//     </div>
-//   );
-// }
-
-// export default App;
-import { useState } from "react";
-import { Modal } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import CardCustom from "./Components/CardCustom";
+const apiClient = axios.create({
+  baseURL: "https://68391e1f6561b8d882af1857.mockapi.io/api",
+});
 
 function App() {
-  const [isShow, setIsShow] = useState(false);
-  const handleShow = () => {
-    setIsShow((prev) => !prev);
+  const [students, setStudents] = useState<Student[]>([]);
+
+  const fetchStudent = async () => {
+    try {
+      const response = await apiClient.get<Student[]>("/students");
+      setStudents(response.data);
+    } catch (err) {
+      console.error(err);
+    }
   };
+  useEffect(() => {
+    fetchStudent();
+  }, []);
   return (
     <div>
-      <CardCustom handleShow={handleShow} />
-      <Modal show={isShow}>
-        <Modal.Dialog>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body>
-            <p>Modal body text goes here.</p>
-          </Modal.Body>
-
-          <Modal.Footer>
-            <Button onClick={handleShow} variant="secondary">
-              Close
-            </Button>
-            <Button variant="primary">Save changes</Button>
-          </Modal.Footer>
-        </Modal.Dialog>
-      </Modal>
+      <ul className="grid grid-cols-3 gap-8">
+        {students.map((student) => (
+          <div key={student.id} className="p-3 rounded-xl border ">
+            <div className="w-full h-60 object-cover rounded-t-xl overflow-hidden">
+              <img
+                src={student.avatar}
+                className="w-full object-cover h-60"
+                alt={student.name}
+              />
+            </div>
+            <div className="mt-1.5">
+              <p className="font-bold text-3xl">{student.name}</p>
+              <p>{student.email}</p>
+            </div>
+          </div>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -14,20 +14,6 @@ const data = [
   },
   {
     id: 2,
-    name: "Hoa Hậu",
-    rating: 10,
-    isSpecial: true,
-
-    isNatural: true,
-    image:
-      "https://i.pinimg.com/736x/2a/39/d3/2a39d343bd1d6dfb0213b4fc4dc2c965.jpg",
-    color: "pink",
-    numberOfLike: 999999,
-    origin: "VietNam",
-    category: "Woman",
-  },
-  {
-    id: 3,
     name: "Rose",
     rating: 5,
     isSpecial: false,
@@ -40,7 +26,7 @@ const data = [
     category: "Rosaceae",
   },
   {
-    id: 4,
+    id: 3,
     name: "Grass Flower",
     rating: 4,
     isSpecial: true,
@@ -53,7 +39,7 @@ const data = [
     category: "Grass",
   },
   {
-    id: 5,
+    id: 4,
     name: "Hydrangea",
     rating: 4,
     isSpecial: true,
@@ -66,7 +52,7 @@ const data = [
     category: "Flower",
   },
   {
-    id: 6,
+    id: 5,
     name: "Tulip",
     rating: 4,
     isSpecial: true,
@@ -79,7 +65,7 @@ const data = [
     category: "Hydrangea",
   },
   {
-    id: 7,
+    id: 6,
     name: "Sakura",
     rating: 5,
     isSpecial: true,
@@ -91,60 +77,9 @@ const data = [
     origin: "Japan",
     category: "Hydrangea",
   },
+
   {
-    id: 8,
-    name: "Nhài Flower",
-    rating: 4,
-    isSpecial: true,
-    isNatural: true,
-    image:
-      "https://i.pinimg.com/736x/5e/14/bb/5e14bbeacdeaa47639787c8acdaa8353.jpg",
-    color: "white",
-    numberOfLike: 2004,
-    origin: "VietNam",
-    category: "Nhài",
-  },
-  {
-    id: 9,
-    name: "Hoa Sen",
-    rating: 4,
-    isSpecial: true,
-    isNatural: true,
-    image:
-      "https://i.pinimg.com/736x/27/b0/77/27b0772c163661863bcf450912919633.jpg",
-    color: "pink",
-    numberOfLike: 202,
-    origin: "VietNam",
-    category: "Water Flower",
-  },
-  {
-    id: 10,
-    name: "Hoa Hòe",
-    rating: 4,
-    isSpecial: false,
-    isNatural: true,
-    image:
-      "https://i.pinimg.com/736x/9c/05/82/9c05829b7e2c80e0a7db565c65343251.jpg",
-    color: "orange",
-    numberOfLike: 2204,
-    origin: "VietNam",
-    category: "Hòe",
-  },
-  {
-    id: 11,
-    name: "Hoa Mận",
-    rating: 3,
-    isSpecial: false,
-    isNatural: true,
-    image:
-      "https://i.pinimg.com/736x/66/f1/b4/66f1b4cc72e7dcfb48e0bf031ea2cf44.jpg",
-    color: "white",
-    numberOfLike: 402,
-    origin: "VietNam",
-    category: "Trái Cây",
-  },
-  {
-    id: 12,
+    id: 7,
     name: "Hydrangea",
     rating: 4,
     isSpecial: true,
@@ -155,58 +90,6 @@ const data = [
     numberOfLike: 2004,
     origin: "World",
     category: "Hydrangea",
-  },
-  {
-    id: 13,
-    name: "Hoa Cải",
-    rating: 3,
-    isSpecial: true,
-    isNatural: true,
-    image:
-      "https://i.pinimg.com/736x/a3/04/4c/a3044c259bf9217338ff0b3e67c400e7.jpg",
-    color: "blue",
-    numberOfLike: 3258,
-    origin: "USA",
-    category: "ButterFlower",
-  },
-  {
-    id: 14,
-    name: "Hoa Đẹp",
-    rating: 5,
-    isSpecial: true,
-    isNatural: true,
-    image:
-      "https://i.pinimg.com/736x/56/e7/70/56e77035147672c75ca7caec172ebca7.jpg",
-    color: "red",
-    numberOfLike: 357,
-    origin: "World",
-    category: "Hoa cải",
-  },
-  {
-    id: 15,
-    name: "Full Hoa",
-    rating: 4,
-    isSpecial: true,
-    isNatural: true,
-    image:
-      "https://i.pinimg.com/736x/2f/56/fa/2f56fa81ba9245210fae709aa2c07ad5.jpg",
-    color: "aqua",
-    numberOfLike: 325,
-    origin: "Liên Quân",
-    category: "Flo",
-  },
-  {
-    id: 16,
-    name: "BeautyFlower",
-    rating: 4,
-    isSpecial: true,
-    isNatural: true,
-    image:
-      "https://i.pinimg.com/736x/1f/71/ea/1f71ea4a45243106262e48916a9e96e9.jpg",
-    color: "pink",
-    numberOfLike: 2234,
-    origin: "Chinese",
-    category: "ChinesGirl",
   },
 ];
 
