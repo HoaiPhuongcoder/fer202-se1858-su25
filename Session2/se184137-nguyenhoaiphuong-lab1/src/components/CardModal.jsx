@@ -16,7 +16,7 @@ function CardModal({ isOpen, onClose, cardData }) {
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-            Chi tiết hoa lan
+            Chi tiết {cardData.name}
           </h2>
           <button
             onClick={onClose}
@@ -85,9 +85,9 @@ function CardModal({ isOpen, onClose, cardData }) {
                   {cardData.name}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Một loài hoa lan tuyệt đẹp với màu sắc rực rỡ và hương thơm
-                  quyến rũ. Thích hợp để trang trí nhà cửa hoặc làm quà tặng cho
-                  người thân yêu.
+                  Một loài tuyệt đẹp với màu sắc rực rỡ và hương thơm quyến rũ.
+                  Thích hợp để trang trí nhà cửa hoặc làm quà tặng cho người
+                  thân yêu.
                 </p>
               </div>
 
