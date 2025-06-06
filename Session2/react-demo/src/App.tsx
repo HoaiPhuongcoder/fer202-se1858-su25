@@ -1,9 +1,8 @@
 // import axios from "axios";
 // import { useEffect, useState } from "react";
 
-import MyButton from "./Components/MyButton";
-import MyNavbar from "./Components/MyNavbar";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import { useReducer } from "react";
+import { Button } from "./Components/ui/button";
 
 // import { createContext, useContext, type ReactNode } from "react";
 
@@ -105,13 +104,41 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 
 // export default App;
 
+interface LoginType {
+  isLogin: boolean;
+  name: string;
+  role: string;
+}
+interface ActionType {
+  type: string;
+  payload?: string;
+}
+
+const initialValue: LoginType = {
+  isLogin: false,
+  name: "J97",
+  role: "guest",
+};
+
+const reducer = (state: LoginType, action: ActionType) => {
+  switch (action.type) {
+    case "Login":
+      return { isLogin: true, name: "Thiên An", role: "guest" } as LoginType;
+
+    default:
+      return state;
+  }
+};
+
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialValue);
   return (
     <div>
-      <ThemeProvider>
-        <MyNavbar />
-        <MyButton />
-      </ThemeProvider>
+      <p>{state.name}</p>
+      <div className="flex">
+        <Button onClick={() => dispatch({ type: "Login" })}>Login</Button>
+        <Button>LogOut</Button>
+      </div>
     </div>
   );
 }
